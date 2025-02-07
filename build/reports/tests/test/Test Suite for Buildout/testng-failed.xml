@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Test Suite for Buildout]" guice-stage="DEVELOPMENT" verbose="0">
+  <test name="Test Cases for Buildout">
+    <classes>
+      <class name="demo.TestCases"/>
+    </classes>
+  </test> <!-- Test Cases for Buildout -->
+</suite> <!-- Failed suite [Test Suite for Buildout] -->

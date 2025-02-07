@@ -1,24 +1,12 @@
 plugins {
-    id 'java'
+    id 'application'
 }
-
-
-
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-apply plugin: 'application'
-apply plugin: 'checkstyle'
-
-
-group 'org.example'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
-
+ 
 dependencies {
-
     testImplementation 'org.testng:testng:6.9.10'
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
@@ -58,22 +46,3 @@ test {
 }
 
 mainClassName = 'demo.App'
-
-checkstyle {
-    toolVersion = '8.45' // Check for the latest version compatible with your setup
-    config = rootProject.resources.text.fromFile('__CRIO__/checkstyle.xml')
-    sourceSets = [sourceSets.test]
-    ignoreFailures = true
-}
-
-tasks.withType(Checkstyle) {
-    reports {
-            xml.required = true
-            html.required = false
-        }
-}
-
-test {
-    dependsOn assemble
-    mustRunAfter clean
-}
