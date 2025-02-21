@@ -13,6 +13,8 @@
 @rem See the License for the specific language governing permissions and
 @rem limitations under the License.
 @rem
+@rem SPDX-License-Identifier: Apache-2.0
+@rem
 
 @if "%DEBUG%"=="" @echo off
 @rem ##########################################################################
@@ -26,6 +28,7 @@ if "%OS%"=="Windows_NT" setlocal
 
 set DIRNAME=%~dp0
 if "%DIRNAME%"=="" set DIRNAME=.
+@rem This is normally unused
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%..
 
@@ -42,11 +45,11 @@ set JAVA_EXE=java.exe
 %JAVA_EXE% -version >NUL 2>&1
 if %ERRORLEVEL% equ 0 goto execute
 
-echo.
-echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
-echo.
-echo Please set the JAVA_HOME variable in your environment to match the
-echo location of your Java installation.
+echo. 1>&2
+echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH. 1>&2
+echo. 1>&2
+echo Please set the JAVA_HOME variable in your environment to match the 1>&2
+echo location of your Java installation. 1>&2
 
 goto fail
 
@@ -56,22 +59,22 @@ set JAVA_EXE=%JAVA_HOME%/bin/java.exe
 
 if exist "%JAVA_EXE%" goto execute
 
-echo.
-echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
-echo.
-echo Please set the JAVA_HOME variable in your environment to match the
-echo location of your Java installation.
+echo. 1>&2
+echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME% 1>&2
+echo. 1>&2
+echo Please set the JAVA_HOME variable in your environment to match the 1>&2
+echo location of your Java installation. 1>&2
 
 goto fail
 
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\lakeshsahu22-ME_QA_XGOOGLE_FORM-1.0-SNAPSHOT.jar;%APP_HOME%\lib\selenium-java-4.21.0.jar;%APP_HOME%\lib\selenium-chrome-driver-4.21.0.jar;%APP_HOME%\lib\selenium-devtools-v123-4.21.0.jar;%APP_HOME%\lib\selenium-devtools-v124-4.21.0.jar;%APP_HOME%\lib\selenium-devtools-v125-4.21.0.jar;%APP_HOME%\lib\selenium-firefox-driver-4.21.0.jar;%APP_HOME%\lib\selenium-devtools-v85-4.21.0.jar;%APP_HOME%\lib\selenium-edge-driver-4.21.0.jar;%APP_HOME%\lib\selenium-ie-driver-4.21.0.jar;%APP_HOME%\lib\selenium-safari-driver-4.21.0.jar;%APP_HOME%\lib\selenium-support-4.21.0.jar;%APP_HOME%\lib\selenium-chromium-driver-4.21.0.jar;%APP_HOME%\lib\selenium-remote-driver-4.21.0.jar;%APP_HOME%\lib\selenium-manager-4.21.0.jar;%APP_HOME%\lib\selenium-http-4.21.0.jar;%APP_HOME%\lib\selenium-json-4.21.0.jar;%APP_HOME%\lib\selenium-os-4.21.0.jar;%APP_HOME%\lib\selenium-api-4.21.0.jar;%APP_HOME%\lib\auto-service-annotations-1.1.1.jar;%APP_HOME%\lib\guava-33.2.0-jre.jar;%APP_HOME%\lib\opentelemetry-semconv-1.25.0-alpha.jar;%APP_HOME%\lib\opentelemetry-exporter-logging-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-trace-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-metrics-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-logs-1.38.0.jar;%APP_HOME%\lib\opentelemetry-sdk-common-1.38.0.jar;%APP_HOME%\lib\opentelemetry-api-incubator-1.38.0-alpha.jar;%APP_HOME%\lib\opentelemetry-api-1.38.0.jar;%APP_HOME%\lib\opentelemetry-context-1.38.0.jar;%APP_HOME%\lib\byte-buddy-1.14.15.jar;%APP_HOME%\lib\failsafe-3.3.2.jar;%APP_HOME%\lib\failureaccess-1.0.2.jar;%APP_HOME%\lib\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;%APP_HOME%\lib\jsr305-3.0.2.jar;%APP_HOME%\lib\checker-qual-3.42.0.jar;%APP_HOME%\lib\error_prone_annotations-2.26.1.jar;%APP_HOME%\lib\commons-exec-1.4.0.jar
+set CLASSPATH=%APP_HOME%\lib\lakeshsahu22-ME_QA_XGOOGLE_FORM.jar;%APP_HOME%\lib\testng-7.11.0.jar;%APP_HOME%\lib\selenium-java-4.29.0.jar;%APP_HOME%\lib\slf4j-api-2.0.16.jar;%APP_HOME%\lib\jcommander-1.83.jar;%APP_HOME%\lib\jquery-3.7.1.jar;%APP_HOME%\lib\selenium-chrome-driver-4.29.0.jar;%APP_HOME%\lib\selenium-devtools-v131-4.29.0.jar;%APP_HOME%\lib\selenium-devtools-v132-4.29.0.jar;%APP_HOME%\lib\selenium-devtools-v133-4.29.0.jar;%APP_HOME%\lib\selenium-devtools-v85-4.29.0.jar;%APP_HOME%\lib\selenium-edge-driver-4.29.0.jar;%APP_HOME%\lib\selenium-firefox-driver-4.29.0.jar;%APP_HOME%\lib\selenium-ie-driver-4.29.0.jar;%APP_HOME%\lib\selenium-safari-driver-4.29.0.jar;%APP_HOME%\lib\selenium-support-4.29.0.jar;%APP_HOME%\lib\selenium-chromium-driver-4.29.0.jar;%APP_HOME%\lib\selenium-remote-driver-4.29.0.jar;%APP_HOME%\lib\selenium-manager-4.29.0.jar;%APP_HOME%\lib\selenium-http-4.29.0.jar;%APP_HOME%\lib\selenium-json-4.29.0.jar;%APP_HOME%\lib\selenium-os-4.29.0.jar;%APP_HOME%\lib\selenium-api-4.29.0.jar;%APP_HOME%\lib\jspecify-1.0.0.jar;%APP_HOME%\lib\auto-service-annotations-1.1.1.jar;%APP_HOME%\lib\guava-33.4.0-jre.jar;%APP_HOME%\lib\opentelemetry-semconv-1.28.0-alpha.jar;%APP_HOME%\lib\opentelemetry-exporter-logging-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-extension-autoconfigure-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-extension-autoconfigure-spi-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-trace-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-metrics-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-logs-1.46.0.jar;%APP_HOME%\lib\opentelemetry-sdk-common-1.46.0.jar;%APP_HOME%\lib\opentelemetry-api-incubator-1.46.0-alpha.jar;%APP_HOME%\lib\opentelemetry-api-1.46.0.jar;%APP_HOME%\lib\opentelemetry-context-1.46.0.jar;%APP_HOME%\lib\byte-buddy-1.15.11.jar;%APP_HOME%\lib\failureaccess-1.0.2.jar;%APP_HOME%\lib\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;%APP_HOME%\lib\jsr305-3.0.2.jar;%APP_HOME%\lib\checker-qual-3.43.0.jar;%APP_HOME%\lib\error_prone_annotations-2.36.0.jar;%APP_HOME%\lib\j2objc-annotations-3.0.0.jar;%APP_HOME%\lib\commons-exec-1.4.0.jar
 
 
 @rem Execute lakeshsahu22-ME_QA_XGOOGLE_FORM
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %LAKESHSAHU22_ME_QA_XGOOGLE_FORM_OPTS%  -classpath "%CLASSPATH%" demo.App %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %LAKESHSAHU22_ME_QA_XGOOGLE_FORM_OPTS%  -classpath "%CLASSPATH%" App %*
 
 :end
 @rem End local scope for the variables with windows NT shell
